@@ -509,7 +509,8 @@ main .customers .customers-list-item svg {
   height: 56px;
 }
 
-main .customers .customers-link:is(:hover, :focus) {
+main .customers .customers-link:hover,
+ain .customers .customers-link:focus {
   border: 1px solid var(--ocean);
   fill: var(--ocean);
 }
