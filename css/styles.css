@@ -161,12 +161,13 @@ footer .footer-logo span,
   color: var(--iris);
 }
 
-.active::after {
+/* .active::after {
   display: block;
-  contain: "sd";
+  contain: "";
   color: red;
+  background-color: var(--iris);
 
-  display: block;
+  /* display: block;
   content: "";
   background-color: var(--cloud);
   background-image: url(../images/advantages-antenna.svg);
@@ -176,8 +177,8 @@ footer .footer-logo span,
   background-size: contain;
   background-repeat: no-repeat;
   background-origin: content-box;
-  margin-bottom: 8px;
-}
+  margin-bottom: 8px; */
+} */
 
 header nav .link.logo {
   margin-right: 76px;
