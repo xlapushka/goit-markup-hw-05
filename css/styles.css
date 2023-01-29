@@ -74,18 +74,24 @@ img {
   color: var(--navy-blue);
 
   text-decoration: none;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-1 {
   color: var(--slate);
 
   text-decoration: none;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-2 {
   color: var(--cloud);
 
   text-decoration: none;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button {
@@ -98,7 +104,8 @@ img {
 .link:hover,
 .link-1:hover,
 .link:focus,
-.link-1:focus {
+.link-1:focus,
+.active {
   color: var(--ocean);
 }
 
@@ -152,31 +159,26 @@ header .logo {
 }
 
 header .logo span,
-footer .footer-logo span,
-.active {
+footer .footer-logo span {
   color: var(--ocean);
 }
 
-/* header .menu li::after {
-  display: block;
-  contain: "";
-  background-color: var(--ocean);
-  color
-  height: 4px;
-  width: 100%; */
+header .active {
+  position: relative;
+} 
 
-/* display: block;
-  content: "";
-  background-color: var(--cloud);
-  background-image: url(../images/advantages-antenna.svg);
-  height: 112px;
-  width: 264px;
-  padding: 24px 100px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-origin: content-box;
-  margin-bottom: 8px; */
-/* } */
+header .active::after {
+  display: block;
+  position: absolute;
+  bottom: 0;
+
+  content: '';
+  height: 4px;
+  width: 100%; 
+
+  background-color: var(--ocean);
+  color: var(--ocean);
+}
 
 header nav .link.logo {
   margin-right: 76px;
@@ -661,12 +663,81 @@ footer .box p {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
 
   transform: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: opacity 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projects .projects-card:is(:hover, :focus),
+.projects-card:is(:hover, :focus) .project-card-overlay {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  cursor: pointer;
+  opacity: 1;  
+}
+
+.projects-card-thumb {
+  position: relative;
+}
+
+.project-card-overlay {
+  position: absolute;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+  padding: 32px 40px;
+  overflow-y: auto;
+
+  color: var(--cloud);
+  background-color: var(--iris);
+  opacity: 0;
+
+  transform: opacity 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.projects .project-card-overlay p {
+  font-weight: 400;
+}
+
+
+/* .projects-card-thumb::before {
+  display: inline-block;
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: var(--iris);
+  opacity: 0; */
+
+  /* transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);   */
+/* }
+
+.projects-card-thumb:hover ::before {
+  opacity: 1
+}  */
+
+
+/* .product-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--iris);
+  opacity: 0;
+
+  transform: translateY(-100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .projects .projects-card:is(:hover, :focus) {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-}
+  transform: translateY(0);
+  opacity: 1;
+} */
 
 .projects .projects-card-descr {
   padding-top: 32px;
